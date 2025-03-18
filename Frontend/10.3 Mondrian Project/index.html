@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container{
+      display: grid;
+      background-color: black;
+      width:748px;
+      height: 748px;
+      gap: 9px;
+      grid-template-columns: 320px 419px;
+      grid-template-rows:414px 325px ;
+    }
+    .one{
+      background-color: red;
+    }
+    .two{
+      background-color: #F0F1EC;
+    }
+    .three{
+      background-color: black;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows:296px 20px;
+      gap: 9px;
+    }
+    .tup{
+      background-color:#F0F1EC;
+    }
+    .tdown{
+      background-color:#F0F1EC;
+    }
+    .four{
+      background-color: black;
+      display: grid;
+      grid-template-columns: 360px 50px;
+      grid-template-rows:100%;
+      gap: 9px;
+    }
+    .fl{
+      background-color: black;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 296px 20px;
+      gap: 9px;
+    }
+    .flu{
+      background-color: #F0F1EC;
+    }
+    .fld{
+      background-color: black;
+      display: grid;
+      grid-template-columns: 198px 153px;
+      grid-template-rows: 100%;
+      gap: 9px;
+    }
+    .fldl{
+      background-color: #F9D01E;
+    }
+    .fldr{
+      background-color: #232629;
+    }
+    .fx{
+      background-color: black;
+      display: grid;
+      grid-template-rows: 130px auto;
+      grid-template-columns: 100%;
+      gap: 19px;
+    }
+    .fxu{
+      background-color: #004592;
+    }
+    .fxd{
+      background-color: #F0F1EC;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+   <div class="container">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three">
+      <div class="tup"></div>
+      <div class="tdown"></div>
+    </div>
+    <div class="four">
+      <div class="fl">
+        <div class="flu"></div>
+        <div class="fld">
+          <div class="fldl"></div>
+          <div class="fldr"></div>
+        </div>
+      </div>
+      <div class="fx">
+        <div class="fxu"></div>
+        <div class="fxd"></div>
+      </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+colorhumt.io 			--for color pallets
+css-tricks  			--for css
+getbootstrap.com 		--for bootstrap
+mdn web docs			--for js reference and others
+https://github.com/rwaldron/idiomatic.js/   --code styling
+
+awesome-selfhosted GitHub repo for some great open source projects.
+
+awesome-for-beginners GitHub repo for some great starting projects to contribute to open source.
+
+to make json more readable paste it on jsonviewer.stack.hu website.
+
+public-api-lists GitHub repo for list of publicly available api's.
