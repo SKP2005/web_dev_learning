@@ -4,7 +4,9 @@ const express=require("express");
 const bodyParser=require("body-parser");
 const ejs=require("ejs");
 const pg=require("pg");
-const md5=require("md5");
+const bcrypt=require("bcryptjs");
+const saltRounds=10;
+
 
 const app=express();
 
@@ -36,24 +38,30 @@ app.get("/register",(req,res)=>{
 
 app.post("/register",async(req,res)=>{
     var email=req.body.username;
-    var password=md5(req.body.password);
-    await db.query("INSERT INTO users(email,password) VALUES($1,$2)",[email,password]);
-    res.render("secrets");
+    bcrypt.hash(req.body.password, saltRounds, async(err, hash)=> {
+        await db.query("INSERT INTO users(email,password) VALUES($1,$2)",[email,hash]);
+        res.render("secrets");
+    });
 });
 
 app.post("/login",async(req,res)=>{
     var email=req.body.username;
-    var password=md5(req.body.password);
+    var password=req.body.password;
     const response=await db.query("SELECT password FROM users WHERE email=($1)",[email]);
-    console.log(password);
-    console.log(response.rows[0].password);
-        if(password==response.rows[0].password){
+    console.log(typeof(req.body.password));
+    console.log(typeof(response.rows[0].password));
+    bcrypt.compare(req.body.password, response.rows[0].password, function(err, result) {
+        console.log(result);
+        if(result==true){
             res.render("secrets");
             console.log(1);
         }else{
             res.redirect("/"); 
             console.log(2);
         }
+    });
+    console.log(password);
+    console.log(response.rows[0].password);
 });
 
 
